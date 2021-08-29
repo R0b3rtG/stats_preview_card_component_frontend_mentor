@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
@@ -26,10 +26,6 @@
       padding: 10% 0;
     }
 
-    .img-mobile{
-      display: none;
-    }
-
     main{
       background: hsl(244, 38%, 16%);
       width: 80%;
@@ -41,20 +37,21 @@
       justify-content: space-between;
     }
 
-    main .img-desktop{
+    main .img{
       height: 100%;
       width: 50%;
+      background: url('/images/image-header-desktop.jpg') no-repeat center top/cover;
       position: relative;
     }
 
-    main .img-desktop:before{
+    main .img:after{
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       height: 100%;
       width: 100%;
-      background: hsl(277, 64%, 61%);
+      background: hsl(277, 100%, 35% , .4);
     }
 
     main .text-left{
@@ -68,6 +65,7 @@
     }
 
     main .text-left h1{
+      font-weight: 700;
       font-size: 2.2rem;
     }
 
@@ -100,6 +98,64 @@
       margin-top: .5rem; 
       letter-spacing: 1px;
     }
+
+    @media(max-width: 500px){
+      body{
+        padding: 15% 0;
+      }
+
+      main{
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        overflow: scroll;
+      }
+
+      main .img{
+        height: 100%;
+        width: 100%;
+        background: url('/images/image-header-mobile.jpg') no-repeat center center/cover;
+        grid-row: 1;
+
+      }
+
+      main .text-left{
+        height: 100%;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      main .text-left .text{
+        width: 100%;
+        height: 25%;
+        padding-right: 0;
+      }
+
+      main .text-left .text{
+        margin: .7rem 0;
+      }
+
+      main .text-left .text p,
+      main .text-left h1{
+        padding: 0;
+      }
+
+      main .text-left h1{
+        font-size: 1.5rem !important;
+      }
+
+      main .stats{
+        flex-direction: column;
+        width: 100%;
+        height: 50%;
+        margin-top: 1rem;
+        padding-right: 0;
+      }
+
+      main .stats .stat{
+        margin: .7rem 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -125,8 +181,7 @@
         </div>
       </div>
     </div>
-    <img class="img-desktop" src="/images/image-header-desktop.jpg" alt="header desktop">
-    <img class="img-mobile" src="/images/image-header-mobile.jpg" alt="header mobile">
+    <div class="img"></div>
   </main>
 </body>
 </html>
