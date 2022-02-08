@@ -1,0 +1,145 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: hsl(233, 47%, 7%);
+	width: 100vw;
+	height: 100vh;
+	padding: 10% 0;
+}
+
+main {
+	background: hsl(244, 38%, 16%);
+	width: 80%;
+	height: 100%;
+	display: flex;
+	margin: auto;
+	border-radius: 10px;
+	overflow: hidden;
+	justify-content: space-between;
+}
+
+main .img {
+	height: 100%;
+	width: 50%;
+	background: url('./images/image-header-desktop.jpg') no-repeat center
+		top/cover;
+	position: relative;
+}
+
+main .img:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: hsl(277, 100%, 35%, 0.4);
+}
+
+main .text-left {
+	width: 50%;
+	color: #fff;
+	padding: 4rem;
+}
+
+main .text-left h1 span {
+	color: hsl(277, 64%, 61%);
+}
+
+main .text-left h1 {
+	font-weight: 700;
+	font-size: 2.2rem;
+}
+
+main .text-left .text {
+	font-weight: 400;
+	font-size: 0.9rem;
+	padding-right: 5rem;
+	line-height: 1.4rem;
+	margin: 1.5rem 0;
+	margin-bottom: 3rem;
+	color: hsla(0, 0%, 100%, 0.75);
+}
+
+.stats {
+	margin-top: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 6rem;
+}
+
+.upper {
+	text-transform: uppercase;
+}
+
+.stat p {
+	color: hsla(0, 0%, 100%, 0.6);
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	font-weight: 400;
+	margin-top: 0.5rem;
+	letter-spacing: 1px;
+}
+
+@media (max-width: 500px) {
+	body {
+		padding: 15% 0;
+	}
+
+	main {
+		display: grid;
+		grid-template-rows: 1fr 2fr;
+		overflow: scroll;
+	}
+
+	main .img {
+		height: 100%;
+		width: 100%;
+		background: url('./images/image-header-mobile.jpg') no-repeat center
+			center/cover;
+		grid-row: 1;
+	}
+
+	main .text-left {
+		height: 100%;
+		padding: 1.5rem 2rem;
+		text-align: center;
+		width: 100%;
+	}
+
+	main .text-left .text {
+		width: 100%;
+		height: 25%;
+		padding-right: 0;
+	}
+
+	main .text-left .text {
+		margin: 0.7rem 0;
+	}
+
+	main .text-left .text p,
+	main .text-left h1 {
+		padding: 0;
+	}
+
+	main .text-left h1 {
+		font-size: 1.5rem !important;
+	}
+
+	main .stats {
+		flex-direction: column;
+		width: 100%;
+		height: 50%;
+		margin-top: 1rem;
+		padding-right: 0;
+	}
+
+	main .stats .stat {
+		margin: 0.7rem 0;
+	}
+}
